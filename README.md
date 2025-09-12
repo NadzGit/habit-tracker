@@ -1,5 +1,5 @@
 # habit tracker
-a innamoroll themed habit tracker app made in python, utilising the tkinter library.
+a cinnamoroll themed habit tracker app made in python, utilising the tkinter library.
 
 # development Log
 date      |   notes
