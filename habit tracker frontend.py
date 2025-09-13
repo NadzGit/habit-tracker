@@ -1,10 +1,5 @@
 import tkinter as tk
-
-# test click event
-def on_click():
-    habit = add_habit.get()
-    print(f"{habit} Habit Tracked!")
-    add_habit.delete(0, tk.END)
+from habittrackerbackend import * 
 
 
 root = tk.Tk()
@@ -24,7 +19,7 @@ welcome.place(x=205, y=50)
 add_habit = tk.Entry(root, font=("Arial", 10), bg="white", fg="black")
 add_habit.place(x=200, y=130)
 
-btn = tk.Button(root, text="Add", command=on_click)
+btn = tk.Button(root, text="Add", command=lambda:on_click(add_habit, tk))
 btn.place(x=200, y=200)
 
 
