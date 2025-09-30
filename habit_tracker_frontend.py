@@ -1,5 +1,6 @@
 import tkinter as tk
-from habittrackerbackend import * 
+from habit_tracker_backend import * 
+
 
 
 root = tk.Tk()
@@ -17,19 +18,17 @@ welcome = tk.Label(frame, text="welcome back!", font=("Arial", 10),bg = "#4CB5E8
 title.place(x=894, y=78)
 welcome.place(x=385, y=118)  
 
-
-add_habit = tk.Entry(root, font=("Arial", 10), bg="white", fg="black")
-add_habit.place(x=600, y=163, width = 340, height = 54)
-
-btn = tk.Button(root, text="Add", command=lambda:on_click(add_habit, tk))
-btn.config(bg = "#F8DAE7")
-btn.place(x=953, y=163, width = 340, height = 54)
-
-
 # habit tracking space
 canvas = tk.Canvas(root, width = 1096, height = 623)
 canvas.place(x = 444, y = 378)
 canvas.create_line(100,100,100, 600, fill = "#8CCDD4", width = 4)
 
+
+add_habit = tk.Entry(root, font=("Arial", 10), bg="white", fg="black")
+add_habit.place(x=600, y=163, width = 340, height = 54)
+
+btn = tk.Button(root, text="Add", command=lambda:on_click(add_habit, tk, canvas))
+btn.config(bg = "#F8DAE7")
+btn.place(x=953, y=163, width = 340, height = 54)
 
 root.mainloop()
