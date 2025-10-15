@@ -2,6 +2,13 @@ habits = [] # list to store habits
 
 import tkinter as tk
 import random
+import sqlite3
+
+connection = sqlite3.connect('storage.db')
+
+c = connection.cursor() 
+
+c.execute 
 
 y_pos = 110
 
@@ -34,7 +41,7 @@ def create_habitcircles(canvas, y_pos):
     colour_gen = colour_generator()
     for i in range(7):
         new_colour = next(colour_gen)
-        oval = canvas.create_oval(120 + i*70, y_pos, 170 + i*70, y_pos+50, fill = new_colour, width = 0)
+        oval = canvas.create_oval(120 + i*100, y_pos, 170 + i*100, y_pos+50, fill = new_colour, width = 0)
         original_colours[oval] = new_colour # store original colour of circle in dictionary
         canvas.tag_bind(oval, "<Button-1>", lambda event, x=120 + i*70, y=y_pos: on_circle_click(event, oval)) # bind click event to each circle, passing original colour as argument
 # random colour generator for circles for aesthetic purposes
@@ -44,4 +51,5 @@ def colour_generator():
         random.shuffle(colours)
         for colour in colours:
             yield colour # yield keyword allows function to return a value and later be resumed from where it left off- better memory usage
+
 

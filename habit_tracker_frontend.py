@@ -31,4 +31,14 @@ btn = tk.Button(root, text="Add", command=lambda:on_click(add_habit, tk, canvas)
 btn.config(bg = "#F8DAE7")
 btn.place(x=953, y=163, width = 340, height = 54)
 
+# days of the week
+text = canvas.create_text(145,80, text="M", font = ("Arial, 14"))
+text = canvas.create_text(250,80, text="T", font = ("Arial, 14"))
+text = canvas.create_text(350,80, text="W", font = ("Arial, 14"))
+text = canvas.create_text(450,80, text="T", font = ("Arial, 14"))
+text = canvas.create_text(545,80, text="F", font = ("Arial, 14"))
+text = canvas.create_text(645,80, text="S", font = ("Arial, 14"))
+text = canvas.create_text(740,80, text="S", font = ("Arial, 14"))
+
+
 root.mainloop()
